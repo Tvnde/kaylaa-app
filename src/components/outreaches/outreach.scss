@@ -1,0 +1,130 @@
+.outreach {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Nunito';
+    margin-left: 20%;
+
+    .content {
+        flex: 4;
+        min-height: 100vh;
+        width: 100%;
+
+        .top-section {
+            padding: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .intro {
+                font-size: 27px;
+                font-weight: 700;
+                color: rgb(73, 73, 73);
+            }
+        }
+
+        .main-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 2%;
+            padding: 2%;
+            background-color: #f7f9fb;
+
+            .top {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                .left-top, .right-top {
+                    flex: 1;
+                }
+
+                .right-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    .search-box {
+                        display: flex;
+                        align-items: center;
+                        border: 0.5px solid lightgray;
+                        border-radius: 6px;
+                        position: relative;
+                        padding: 6px;
+                        margin-right: 4%;
+                        background-color: white;
+
+                        input {
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                            font-size: 14px;
+                            
+                            &::placeholder {
+                                font-weight: 600;
+                                font-family: 'Nunito';
+                            }
+                        }
+
+                        .icon {
+                            position: absolute;
+                            right: 4px;
+                            color: #929292;
+                        }
+                    }
+
+                    .filter-rule {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background-color: white;
+                        border: 1px solid lightgray;
+                        padding: 0 2%;
+                        border-radius: 5px;
+                        margin-right: 4%;
+
+                        .title {
+                            font-weight: 700;
+                            font-size: 15px;
+                            color: #929292;
+                        }
+
+                        .icon {
+                            color: #929292;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .new-button {
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        border: 1px solid #ff9966;
+                        padding: 0 2%;
+                        background: #ff9966;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+                        .icon {
+                            color: white;
+                            font-weight: 700;
+                        }
+                        .title {
+                            font-weight: 700;
+                            font-size: 15px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

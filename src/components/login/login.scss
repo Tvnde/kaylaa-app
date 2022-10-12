@@ -1,0 +1,147 @@
+.login {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: 'Dosis';
+
+    .loginContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .login-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #3b01b8;
+            height: 100vh;
+            padding-top: 10%;
+
+            .logo-brand {
+                width: 150px;
+                height: 100px;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .formInput {
+                width: 70%;
+                position: relative;
+                margin-bottom: 10%;
+                padding-right: 10%;
+
+                .login-label {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    transition: top .3s;
+                    padding: 0 5px;
+                    color: rgb(63, 63, 63);
+
+                    .icon {
+                        cursor: pointer;
+                    }
+                }
+
+                .login-input, .select-input {
+                    width: 100%;
+                    padding: 5%;
+                    border: 1px solid #abb3c0;
+                    outline: none;
+                    background-color: #e8f0fe;
+                    border-radius: 5px;
+                    color: rgb(90, 89, 89);
+                    font-weight: 500;
+                    font-family: 'Dosis';
+                    box-shadow: -1px 0px 7px -4px rgba(0,0,0,0.85);
+                    -webkit-box-shadow: -1px 0px 7px -4px rgba(0,0,0,0.85);
+                    -moz-box-shadow: -1px 0px 7px -4px rgba(0,0,0,0.85);
+
+                    &:focus {
+                        border-color: #e8f0fe;
+                        border-width: 2px;
+                    }
+                }
+
+                .login-input:focus ~ .login-label,
+                .login-input:not(:placeholder-shown).login-input:not(:focus) ~.login-label {
+                    top: -30px;
+                    background-color: transparent;
+                    color: #e8f0fe;
+                }
+
+                .select-input:focus ~ .login-label,
+                .select-input:not(:placeholder-shown).select-input:not(:focus) ~.login-label {
+                    top: -30px;
+                    background-color: transparent;
+                    color: #e8f0fe;
+                }
+            }
+
+            .formButton {
+                width: 78%;
+                margin-right: 2%;
+                cursor: pointer;
+
+                .form-btn {
+                    width: 100%;
+                    padding: 4%;
+                    border-radius: 10px;
+                    font-size: 20px;
+                    font-family: 'Dosis';
+                    border: none;
+                    cursor: pointer;
+                    color: rgb(90, 89, 89);
+
+                }
+            }
+
+            .create-acct {
+                margin-top: 5%;
+                color: #e8f0fe;
+                position: relative;
+
+                span {
+                    cursor: pointer;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background-color: #e8f0fe;
+                        height: 3px;
+                        width: 80px;
+                        left: 0px;
+                        bottom: -10px;
+                        transition: 0.3s;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .login-image {
+            flex: 2;
+            width: 100%;
+            height: 100%;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

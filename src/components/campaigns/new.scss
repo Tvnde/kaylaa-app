@@ -1,0 +1,147 @@
+.new {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20%;
+    font-family: 'Nunito';
+
+    .content {
+        flex: 4;
+        min-height: 100vh;
+        width: 100%;
+
+        .top-section {
+            padding: 2%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .intro{
+                font-size: 27px;
+                font-weight: 600;
+                color: rgb(73, 73, 73);
+
+                span {
+
+                }
+            }
+        }
+
+        .main-section {
+            padding: 2%;
+
+            .basic-section, .campaign-section, .target-section {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8%;
+
+                .section-title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    .title {
+                        font-size: 25px;
+                        color: #393939;
+                        font-weight: 800;
+                    }
+                    .text {
+                        font-size: 15px;
+                        color: #929292;
+                        font-weight: 500;
+                    }
+                }
+
+                .section-form {
+                    width: 60%;
+                    form {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 30px;
+                        justify-content: space-around;
+
+                        .formInput {
+                            position: relative;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+    
+                            .create-label {
+                                position: absolute;
+                                top: 10px;
+                                left: 15px;
+                                font-size: 16px;
+                                font-weight: 600;
+                                transition: top .3s;
+                                padding: 0 5px;
+                                color: #929292;
+    
+                                .icon {
+                                    cursor: pointer;
+                                }
+                            }
+    
+                            .create-input, .select-input {
+                                width: 100%;
+                                border: none;
+                                outline: none;
+                                background-color: #e7e7e7;
+                                border-radius: 10px;
+                                color: rgb(90, 89, 89);
+                                font-family: 'Nunito';
+                                font-weight: 700;/* 
+                                box-shadow: -1px 0px 7px -4px rgba(0,0,0,0.85);
+                                -webkit-box-shadow: -1px 0px 7px -4px rgba(0,0,0,0.85);
+                                -moz-box-shadow: -1px 0px 7px -4px rgba(0,0,0,0.85); */
+    
+                                &:focus {
+                                    border-color: #929292;
+                                    border-width: 1px;
+                                }
+                            }
+    
+                            .create-input:focus ~ .create-label,
+                            .create-input:not(:placeholder-shown).create-input:not(:focus) ~.create-label {
+                                top: -15px;
+                                background-color: #ffffff;
+                                color: #3b01b8;
+                            }
+    
+                            .select-input:focus ~ .create-label,
+                            .select-input:not(:placeholder-shown).select-input:not(:focus) ~.create-label {
+                                top: -15px;
+                                background-color: #ffffff;
+                                color: #3b01b8;
+                            }
+                        }
+                    }
+                }
+            }
+            .button-section {
+                padding: 5%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+
+                button {
+                    width: 15%;
+                    font-family: 'Nunito';
+                    font-weight: 700;
+                    font-size: 16px;
+                    border: none;
+                    color: white;
+                    background: #8E2DE2;  /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    padding: 1% 2%;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
