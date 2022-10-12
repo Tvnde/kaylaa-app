@@ -1,7 +1,6 @@
-import { AttachEmail, Campaign, Man4 } from '@mui/icons-material'
+import { AttachEmail, Campaign, Man4, PowerSettingsNewOutlined } from '@mui/icons-material'
 import React from 'react'
 import Sidebar from '../partials/sidebar/Sidebar'
-import Widget from '../partials/widget/Widget'
 
 import './home.scss'
 
@@ -141,6 +140,10 @@ const Home = () => {
               <button className='outreach-link'>New Outreach</button>
               <button className='analysis-link'>View Analysis</button>
             </div>
+          </div>
+
+          <div className="logout-button">
+            <button><span><PowerSettingsNewOutlined className = 'icon' /></span>Logout</button>
           </div>
         </div>
     </div>

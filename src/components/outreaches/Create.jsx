@@ -8,10 +8,10 @@ import './create.scss'
 
 const Create = () => {
   let [editorState, setEditorState] = useState(() => EditorState.createEmpty())
-  let editor = useRef(null)
+  let editor = useRef(null)/* 
   let focusEditor = () => {
     editor.current.focus()
-  }
+  } */
   return (
     <div>
         <Sidebar />

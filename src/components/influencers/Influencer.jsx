@@ -1,8 +1,7 @@
 import React from 'react'
 import Sidebar from '../partials/sidebar/Sidebar'
 
-import { AddOutlined, AssessmentOutlined, Facebook, FilterListOutlined, Instagram, MusicNote, SearchOutlined, Twitter } from '@mui/icons-material'
-import { useNavigate } from "react-router-dom"
+import { AddOutlined, Facebook, FilterListOutlined, Instagram, MusicNote, SearchOutlined, Twitter } from '@mui/icons-material'
 
 
 import './influencer.scss'

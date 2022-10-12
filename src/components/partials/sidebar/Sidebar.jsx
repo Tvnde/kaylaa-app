@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 
-import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, PersonSearchOutlined } from "@mui/icons-material"
+import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, LogoutOutlined, PersonSearchOutlined } from "@mui/icons-material"
 
 import './sidebar.scss'
 
@@ -45,6 +45,12 @@ const Sidebar = () => {
                     <li>
                         <AnalyticsOutlined className='icon' />
                         <span>Analytics</span>
+                    </li>
+                </Link>
+                <Link to="/logout" style={{textDecoration: "none"}}>
+                    <li>
+                        <LogoutOutlined className='icon' />
+                        <span>Logout</span>
                     </li>
                 </Link>
             </ul>
