@@ -1,10 +1,19 @@
 import { AttachEmail, Campaign, Man4, PowerSettingsNewOutlined } from '@mui/icons-material'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
 import Sidebar from '../partials/sidebar/Sidebar'
 
 import './home.scss'
 
 const Home = () => {
+  let dispatch = useDispatch()
+  let navigate = useNavigate()
+  const Logout = () => {
+    console.log("Logout")
+    dispatch({type: 'LOGOUT_SUCCESS'})
+    navigate('/login')
+  }
   return (
   <div>
     <Sidebar/>
@@ -143,7 +152,7 @@ const Home = () => {
           </div>
 
           <div className="logout-button">
-            <button><span><PowerSettingsNewOutlined className = 'icon' /></span>Logout</button>
+            <button onClick={Logout}><span><PowerSettingsNewOutlined className = 'icon' /></span>Logout</button>
           </div>
         </div>
     </div>

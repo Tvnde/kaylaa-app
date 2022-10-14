@@ -1,11 +1,18 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, LogoutOutlined, PersonSearchOutlined } from "@mui/icons-material"
 
 import './sidebar.scss'
+import { useDispatch } from 'react-redux'
 
 const Sidebar = () => {
+    let navigate = useNavigate()
+    let dispatch = useDispatch()
+    const logout1 = () => {
+        dispatch({type: 'LOGOUT_SUCCESS'})
+        navigate('/login')
+    }
   return (
     <div className='sidebar'>
         <div className="sidebarContainer">
@@ -47,12 +54,12 @@ const Sidebar = () => {
                         <span>Analytics</span>
                     </li>
                 </Link>
-                <Link to="/logout" style={{textDecoration: "none"}}>
+                <div style={{textDecoration: "none"}} onClick={logout1}>
                     <li>
                         <LogoutOutlined className='icon' />
                         <span>Logout</span>
                     </li>
-                </Link>
+                </div>
             </ul>
         </div>
         </div>

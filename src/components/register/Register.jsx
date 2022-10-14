@@ -1,0 +1,63 @@
+import React, {useState} from 'react'
+import {useNavigate} from 'react-router'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { register } from "../../actions/auth"
+
+import './register.scss'
+
+const Register = () => {
+    let navigate = useNavigate()
+    let dispatch = useDispatch()
+    let loginAccount = () => {
+        navigate('/login')
+    }
+    const [values, setValues] = useState({
+        email: '',
+        firstname: '',
+        lastname: '',
+        password: ''
+    })
+    let handleRegister = (e) => {
+        e.preventDefault()
+        dispatch(register(values,navigate))
+    }
+  return (
+    <div className='register'>
+        <div className="registerContainer">
+            <div className="register-form">
+                <div className="logo-brand">
+                    <img src="https://kaylaastore.s3.amazonaws.com/assets/logo_full.png" alt="" />
+                </div>
+                <div className="formInput">
+                    <input type="text" className="register-input" id="firstname" defaultValue="" placeholder=' ' />
+                    <label className='register-label' htmlFor="firstname">First Name</label>
+                </div>
+                <div className="formInput">
+                    <input type="text" className="register-input" id="lastname" defaultValue="" placeholder=' ' />
+                    <label className='register-label' htmlFor="lastname">Last Name</label>
+                </div>
+                <div className="formInput">
+                    <input type="text" className="register-input" id="email" defaultValue="" placeholder=' ' />
+                    <label className='register-label' htmlFor="email">Email Address</label>
+                </div>
+                <div className="formInput">
+                    <input type="password" className='register-input' id='password' defaultValue="" placeholder=' ' />
+                    <label htmlFor="password" className='register-label'>Password</label>
+                </div>
+                <div className="formButton">
+                    <button className='form-btn' onClick={handleRegister}>Create Account</button>
+                </div>
+                <div className="create-acct">
+                    Already have an account? <span className='login-link' onClick={loginAccount}>Login</span>
+                </div>
+            </div>
+            <div className="register-image">
+                <img src="https://kaylaastore.s3.amazonaws.com/assets/1280349927-1260x840.jpeg" alt="Girl Image" />
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Register

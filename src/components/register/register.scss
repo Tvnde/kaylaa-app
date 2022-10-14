@@ -1,4 +1,4 @@
-.login {
+.register {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -7,7 +7,7 @@
     margin: 0;
     font-family: 'Dosis';
 
-    .loginContainer {
+    .registerContainer {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -15,7 +15,7 @@
         height: 100%;
         width: 100%;
 
-        .login-form {
+        .register-form {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -38,15 +38,15 @@
             .formInput {
                 width: 70%;
                 position: relative;
-                margin-bottom: 10%;
+                margin-bottom: 7%;
                 padding-right: 10%;
 
-                .login-label {
+                .register-label {
                     position: absolute;
                     top: 15px;
                     left: 15px;
                     font-size: 16px;
-                    font-weight: 500;
+                    font-weight: 700;
                     transition: top .3s;
                     padding: 0 5px;
                     color: rgb(63, 63, 63);
@@ -56,7 +56,7 @@
                     }
                 }
 
-                .login-input, .select-input {
+                .register-input, .select-input {
                     width: 100%;
                     padding: 5%;
                     border: 1px solid #abb3c0;
@@ -75,17 +75,16 @@
                         border-width: 2px;
                     }
                 }
-
-                .login-input:focus ~ .login-label,
-                .login-input:not(:placeholder-shown).login-input:not(:focus) ~.login-label {
-                    top: -30px;
+                .register-input:focus ~ .register-label,
+                .register-input:not(:placeholder-shown).register-input:not(:focus) ~.register-label {
+                    top: -20px;
                     background-color: transparent;
                     color: #e8f0fe;
                 }
 
-                .select-input:focus ~ .login-label,
-                .select-input:not(:placeholder-shown).select-input:not(:focus) ~.login-label {
-                    top: -30px;
+                .select-input:focus ~ .register-label,
+                .select-input:not(:placeholder-shown).select-input:not(:focus) ~.register-label {
+                    top: -20px;
                     background-color: transparent;
                     color: #e8f0fe;
                 }
@@ -101,6 +100,7 @@
                     padding: 4%;
                     border-radius: 10px;
                     font-size: 20px;
+                    font-weight: 700;
                     font-family: 'Dosis';
                     border: none;
                     cursor: pointer;
@@ -131,20 +131,9 @@
                     }
                 }
             }
-
-            .message-alert {
-                background-color: rgba(187, 1, 1, 0.87);
-                width: 77%;
-                margin-bottom: 10%;
-                padding: 2% 0;
-                border-radius: 8px;
-                color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
         }
-        .login-image {
+
+        .register-image {
             flex: 2;
             width: 100%;
             height: 100%;

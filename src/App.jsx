@@ -8,6 +8,8 @@ import New from "./components/campaigns/New";
 import Outreach from "./components/outreaches/Outreach";
 import Influencer from "./components/influencers/Influencer";
 import Create from "./components/outreaches/Create";
+import Register from "./components/register/Register";
+import Creator from "./components/creator/Creator";
 
 
 const App = () => (
@@ -17,6 +19,8 @@ const App = () => (
         <Route path="/">
           <Route index element= {<Home/>} />
           <Route path="login" element={<Login/>} />
+          <Route path="register" element={<Register/>} />
+          <Route path="dashboard" element={<Creator/>} />
         </Route>
         <Route path="campaigns">
           <Route index element = {<Campaign />} />
