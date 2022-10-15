@@ -30,19 +30,19 @@ const Register = () => {
                     <img src="https://kaylaastore.s3.amazonaws.com/assets/logo_full.png" alt="" />
                 </div>
                 <div className="formInput">
-                    <input type="text" className="register-input" id="firstname" defaultValue="" placeholder=' ' />
+                    <input type="text" className="register-input" id="firstname" defaultValue="" onChange={(e) => setValues({...values, firstname: e.target.value})} placeholder=' ' />
                     <label className='register-label' htmlFor="firstname">First Name</label>
                 </div>
                 <div className="formInput">
-                    <input type="text" className="register-input" id="lastname" defaultValue="" placeholder=' ' />
+                    <input type="text" className="register-input" id="lastname" defaultValue="" onChange={(e) => setValues({...values, lastname: e.target.value})} placeholder=' ' />
                     <label className='register-label' htmlFor="lastname">Last Name</label>
                 </div>
                 <div className="formInput">
-                    <input type="text" className="register-input" id="email" defaultValue="" placeholder=' ' />
+                    <input type="text" className="register-input" id="email" defaultValue="" onChange={(e) => setValues({...values, email: e.target.value})} placeholder=' ' />
                     <label className='register-label' htmlFor="email">Email Address</label>
                 </div>
                 <div className="formInput">
-                    <input type="password" className='register-input' id='password' defaultValue="" placeholder=' ' />
+                    <input type="password" className='register-input' id='password' defaultValue="" onChange={(e) => setValues({...values, password: e.target.value})} placeholder=' ' />
                     <label htmlFor="password" className='register-label'>Password</label>
                 </div>
                 <div className="formButton">
