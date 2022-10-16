@@ -1,12 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Sidebar from '../partials/sidebar/Sidebar'
 
 import { AddOutlined, Facebook, FilterListOutlined, Instagram, MusicNote, SearchOutlined, Twitter } from '@mui/icons-material'
 
 
 import './influencer.scss'
+import { useNavigate } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchInfluencers } from '../../actions/influencer'
 
 const Influencer = () => {
+    let navigate = useNavigate()
+    let dispatch = useDispatch()
+    let influencers = useSelector((state) => state.influencers)
+/*     let newCampaign = ()=> {
+        navigate('/campaigns/new')
+    } */
+    useEffect(() => {
+        dispatch(fetchInfluencers())
+    }, [dispatch])
+
   return (
     <div>
         <Sidebar/>
@@ -41,96 +54,38 @@ const Influencer = () => {
                         <div className="influencer-header" style={{flex: '1'}}>Campaigns</div>
                         <div className="influencer-header" style={{flex: '1'}}>Audience</div>
                     </div>
-                    <div className="influencer-instance">
-                        <div className="basic-details">
-                            <div className="influencer-avatar">
-                                <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt="" />
+                    {influencers.map((influencer) => (
+                        <div className="influencer-instance">
+                            <div className="basic-details">
+                                <div className="influencer-avatar">
+                                    <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt="" />
+                                </div>
+                                <div className="influencer-basic">
+                                    <div className="influencer-name">Influencer Name/Handle</div>
+                                </div>
                             </div>
-                            <div className="influencer-basic">
-                                <div className="influencer-name">Influencer Name/Handle</div>
+                            <div className="influencer-socials">
+                                <div className="influencer-instagram">
+                                    <Instagram/>
+                                </div>
+                                <div className="influencer-facebook">
+                                    <Facebook/>
+                                </div>
+                                <div className="influencer-twitter">
+                                    <Twitter/>
+                                </div>
+                                <div className="influencer-tiktok">
+                                    <MusicNote/>
+                                </div>
                             </div>
-                        </div>
-                        <div className="influencer-socials">
-                            <div className="influencer-instagram">
-                                <Instagram/>
+                            <div className="influencer-campaigns">
+                                <div className="campaign-value">24</div>
                             </div>
-                            <div className="influencer-facebook">
-                                <Facebook/>
-                            </div>
-                            <div className="influencer-twitter">
-                                <Twitter/>
-                            </div>
-                            <div className="influencer-tiktok">
-                                <MusicNote/>
-                            </div>
-                        </div>
-                        <div className="influencer-campaigns">
-                            <div className="campaign-value">24</div>
-                        </div>
-                        <div className="influencer-audience">
-                            <div className="audience-value">36.4K</div>
-                        </div>
-                    </div>
-                    <div className="influencer-instance">
-                        <div className="basic-details">
-                            <div className="influencer-avatar">
-                                <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt="" />
-                            </div>
-                            <div className="influencer-basic">
-                                <div className="influencer-name">Influencer Name/Handle</div>
+                            <div className="influencer-audience">
+                                <div className="audience-value">36.4K</div>
                             </div>
                         </div>
-                        <div className="influencer-socials">
-                            <div className="influencer-instagram">
-                                <Instagram/>
-                            </div>
-                            <div className="influencer-facebook">
-                                <Facebook/>
-                            </div>
-                            <div className="influencer-twitter">
-                                <Twitter/>
-                            </div>
-                            <div className="influencer-tiktok">
-                                <MusicNote/>
-                            </div>
-                        </div>
-                        <div className="influencer-campaigns">
-                            <div className="campaign-value">24</div>
-                        </div>
-                        <div className="influencer-audience">
-                            <div className="audience-value">36.4K</div>
-                        </div>
-                    </div>
-                    <div className="influencer-instance">
-                        <div className="basic-details">
-                            <div className="influencer-avatar">
-                                <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt="" />
-                            </div>
-                            <div className="influencer-basic">
-                                <div className="influencer-name">Influencer Name/Handle</div>
-                            </div>
-                        </div>
-                        <div className="influencer-socials">
-                            <div className="influencer-instagram">
-                                <Instagram/>
-                            </div>
-                            <div className="influencer-facebook">
-                                <Facebook/>
-                            </div>
-                            <div className="influencer-twitter">
-                                <Twitter/>
-                            </div>
-                            <div className="influencer-tiktok">
-                                <MusicNote/>
-                            </div>
-                        </div>
-                        <div className="influencer-campaigns">
-                            <div className="campaign-value">24</div>
-                        </div>
-                        <div className="influencer-audience">
-                            <div className="audience-value">36.4K</div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 {/*                 <div className="filter-section">
                     <div className="top">
