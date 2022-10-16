@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const base = axios.create({baseURL: 'http://localhost:7090'})
+const base = axios.create({baseURL: 'https://kaylaa-api.herokuapp.com'})
 
 base.interceptors.request.use((req) => {
     if(localStorage.getItem('profile')) req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile'))}`
