@@ -8,6 +8,8 @@ export default (message = null, action) => {
             return null
         case 'LOGIN_FAIL':
             return action.payload.message
+        case 'LOGIN_LOADING':
+            return null
         default:
             return message
     }

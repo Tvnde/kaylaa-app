@@ -46,7 +46,7 @@ const Register = () => {
                     <label htmlFor="password" className='register-label'>Password</label>
                 </div>
                 <div className="formButton">
-                    <button className='form-btn' onClick={handleRegister}>Create Account</button>
+                    <button className='form-btn' onClick={handleRegister}><span>Register</span></button>
                 </div>
                 <div className="create-acct">
                     Already have an account? <span className='login-link' onClick={loginAccount}>Login</span>

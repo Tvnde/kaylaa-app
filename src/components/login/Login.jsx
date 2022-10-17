@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { login } from '../../actions/auth'
@@ -17,9 +17,12 @@ const Login = () => {
     }
     let auth = useSelector((state) => state.auth)
     console.log(auth)
-    let loginAccount = () => {
-        dispatch(login(values, navigate))
+    let loginAccount = async() => {
+         await dispatch(login(values, navigate))
+        document.getElementById('password').focus()
+
     }
+    
   return (
     <div className='login'>
         <div className="loginContainer">
@@ -37,7 +40,9 @@ const Login = () => {
                     <label className='login-label' htmlFor="password">Password</label>
                 </div>
                 <div className="formButton">
-                    <button className='form-btn' onClick={loginAccount}>Log In</button>
+                    <button className='form-btn' id='formBtn' onClick={loginAccount}>
+                        <span>Log In</span>
+                    </button>
                 </div>
                 <div className="create-acct">
                     Don't have an account? <span className='create-link' onClick={registerAccount}>Create One!</span>

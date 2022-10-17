@@ -93,7 +93,9 @@
 
             .formButton {
                 width: 78%;
-                margin-right: 2%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 cursor: pointer;
 
                 .form-btn {
@@ -105,6 +107,35 @@
                     border: none;
                     cursor: pointer;
                     color: rgb(90, 89, 89);
+                    transition: .4s;
+
+                    &:hover {
+                        box-shadow: -1px 5px 10px -2px rgba(20, 0, 92, 0.75);
+                        -webkit-box-shadow: -1px 5px 10px -2px rgba(20, 0, 92, 0.75);
+                        -moz-box-shadow: -1px 5px 10px -2px rgba(20, 0, 92, 0.75);
+                    }
+
+/*                     span, svg {
+                        position: absolute;
+                        color: rgb(90, 89, 89);
+                        fill: transparent;
+                        transition: .4s;
+                    } */
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                        border: 2px solid #efefef;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        animation: circle 2s 500ms infinite;
+
+                        span {
+                            display: none;
+                        }
+                    }
 
                 }
             }
@@ -155,5 +186,17 @@
                 height: 100%;
             }
         }
+    }
+}
+
+@keyframes circle {
+    50% {
+        border: 2px solid transparent;
+        border-left: 2px solid #efefef;
+    }
+
+    100% {
+        transform: rotate(1080deg);
+        border: 2px solid #efefef;
     }
 }

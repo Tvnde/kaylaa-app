@@ -34,7 +34,7 @@ const Creator = () => {
       <div className='creator'>
           <div className="main-dashboard">
             <div className="top-section">
-                <div className="intro">Hi, <span>{user.name}</span></div>
+                <div className="intro">Hi, <span>{user? user.name: null}</span></div>
             </div>
 
             <div className="selectors-section">
@@ -43,6 +43,7 @@ const Creator = () => {
                 <div className="select-twitter"></div>
                 <div className="select-fb"></div>
                 <div className="select-tiktok"></div>
+                <div className="select-youtube"></div>
               </div>
             </div>
           </div>
