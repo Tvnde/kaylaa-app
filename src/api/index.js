@@ -9,6 +9,8 @@ base.interceptors.request.use((req) => {
 
 export const register = (credentials) => base.post('/auth/register', credentials, {withCredentials: true})
 
+export const login = (credentials) => base.post('/auth/login', credentials, {withCredentials: true})
+
 export const fetchCampaigns = (credentials) => base.post('/campaigns', credentials, {withCredentials: true})
 
 export const saveCampaign = (credentials) => base.post('/campaigns/save', credentials, {withCredentials: true})

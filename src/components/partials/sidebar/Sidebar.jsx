@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link, useNavigate } from "react-router-dom"
 
 import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, LogoutOutlined, PersonSearchOutlined } from "@mui/icons-material"
@@ -13,6 +13,7 @@ const Sidebar = () => {
         dispatch({type: 'LOGOUT_SUCCESS'})
         navigate('/login')
     }
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
   return (
     <div className='sidebar'>
         <div className="sidebarContainer">
@@ -22,8 +23,8 @@ const Sidebar = () => {
                     <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt='' className='avatarImg'/>
                 </div>
                 <div className='admin-profile'>
-                    <div className="name">Admin</div>
-                    <div className="role">Sr. Administrator</div>
+                    <div className="name">{user?.name}</div>
+                    <div className="role">{user?.role}</div>
                 </div>
             </Link>
         </div>

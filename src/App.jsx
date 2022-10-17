@@ -17,10 +17,10 @@ const App = () => (
     <div className="app-container">
       <Routes>
         <Route path="/">
-          <Route index element= {<Home/>} />
+          <Route index element= {<Creator/>} />
           <Route path="login" element={<Login/>} />
           <Route path="register" element={<Register/>} />
-          <Route path="dashboard" element={<Creator/>} />
+          <Route path="/admin" element={<Home/>} />
         </Route>
         <Route path="campaigns">
           <Route index element = {<Campaign />} />

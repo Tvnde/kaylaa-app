@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { register } from "../../actions/auth"
 
@@ -53,7 +53,7 @@ const Register = () => {
                 </div>
             </div>
             <div className="register-image">
-                <img src="https://kaylaastore.s3.amazonaws.com/assets/1280349927-1260x840.jpeg" alt="Girl Image" />
+                <img src="https://kaylaastore.s3.amazonaws.com/assets/1280349927-1260x840.jpeg" alt="kaylaa" />
             </div>
         </div>
     </div>

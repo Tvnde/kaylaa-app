@@ -1,11 +1,28 @@
 .creator {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 25px;
-    font-weight: 700;
     font-family: 'Nunito';
+    margin-left: 20%;
+
+    .main-dashboard {
+        flex: 2.8;
+        min-height: 100vh;
+        width: 100%;
+
+        .top-section {
+            padding: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .intro{
+                font-size: 25px;
+                font-weight: 700;
+                color: rgb(73, 73, 73);
+            }
+        }
+    }
 }

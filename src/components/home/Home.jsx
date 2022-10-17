@@ -1,5 +1,6 @@
 import { AttachEmail, Campaign, Man4, PowerSettingsNewOutlined } from '@mui/icons-material'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import decode from 'jwt-decode'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import Sidebar from '../partials/sidebar/Sidebar'
@@ -9,18 +10,33 @@ import './home.scss'
 const Home = () => {
   let dispatch = useDispatch()
   let navigate = useNavigate()
+
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+  console.log(user)
   const Logout = () => {
     console.log("Logout")
     dispatch({type: 'LOGOUT_SUCCESS'})
     navigate('/login')
   }
+
+  useEffect(() => {
+    const token = user?.token
+    if(token) {
+      const decodeToken = decode(token)
+      if(decodeToken.exp * 1000 < new Date().getTime()){
+        Logout()
+      } else {
+        setUser(JSON.parse(localStorage.getItem('profile')))
+      }
+    } else Logout()
+  }, [dispatch])
   return (
   <div>
     <Sidebar/>
     <div className='dashboard'>
         <div className="main-dashboard">
             <div className="top-section">
-                <div className="intro">Hi, <span>Moses</span></div>{/* 
+                <div className="intro">Hi, <span>Admin</span></div>{/* 
                 <div className="campaign-summary">23% Campaigns Completed</div> */}
             </div>
             <div className="widgets-section">
