@@ -5,6 +5,7 @@
     align-items: center;
     font-family: 'Nunito';
     margin-left: 20%;
+    background-color: #f7f7f7;
 
     .main-dashboard {
         flex: 2.8;
@@ -22,6 +23,84 @@
                 font-size: 25px;
                 font-weight: 700;
                 color: rgb(73, 73, 73);
+            }
+        }
+
+        .selectors-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+
+            .selector-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: rgb(90, 89, 89);
+            }
+
+            .all-selectors {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                padding: 0 4.6%;
+                width: auto;
+
+                .selector {
+                    padding: 3%;
+                    cursor: pointer;
+                }
+
+                .selector-focus {
+                    padding: 3%;
+                }
+            }
+        }
+
+        .summary-section {
+            padding: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+
+            .all-summary {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                .summary {
+                    background-color: #ffffff;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 180px;
+                    height: 180px;
+
+                    .summary-icon {
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #3b01b87e;
+                        color: #3b01b8;
+                        margin-bottom: 7%;
+                    }
+
+                    .summary-title {
+                        color: rgb(90, 89, 89);
+                    }
+
+                    .summary-value {
+                        font-size: 30px;
+                        font-weight: 600;
+                    }
+                }
             }
         }
     }

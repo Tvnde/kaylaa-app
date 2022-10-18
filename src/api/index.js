@@ -16,3 +16,5 @@ export const fetchCampaigns = (credentials) => base.post('/campaigns', credentia
 export const saveCampaign = (credentials) => base.post('/campaigns/save', credentials, {withCredentials: true})
 
 export const fetchInfluencers = (credentials) => base.post('/creators', credentials, {withCredentials: true})
+
+export const connectSDKAction = (credentials) => base.post('/auth/connectSDK', credentials, {withCredentials: true})

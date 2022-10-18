@@ -14,6 +14,11 @@ const Sidebar = () => {
         navigate('/login')
     }
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+    console.log(user)
+
+    let connectSDK = () => {
+        console.log("connect")
+    }
   return (
     <div className='sidebar'>
         <div className="sidebarContainer">
@@ -29,32 +34,61 @@ const Sidebar = () => {
             </Link>
         </div>
         <div className="center">
+            {user.role == "administrator" ? (
             <ul>
+            <p className="title">Menu</p>
+            <Link to="/influencers" style={{textDecoration: "none"}}>
+                <li>
+                    <PersonSearchOutlined className='icon'/>
+                    <span>Influencers</span>
+                </li>
+            </Link>
+            <Link to="/campaigns" style={{textDecoration: "none"}}>
+                <li>
+                    <CampaignOutlined className='icon' />
+                    <span>Campaigns</span>
+                </li>
+            </Link>
+            <Link to="/outreaches" style={{textDecoration: "none"}}>
+                <li>
+                    <DraftsOutlined className='icon' />
+                    <span>Outreach</span>
+                </li>
+            </Link>
+            <Link to="/analytics" style={{textDecoration: "none"}}>
+                <li>
+                    <AnalyticsOutlined className='icon' />
+                    <span>Analytics</span>
+                </li>
+            </Link>
+            <div style={{textDecoration: "none"}} onClick={logout1}>
+                <li>
+                    <LogoutOutlined className='icon' />
+                    <span>Logout</span>
+                </li>
+            </div>
+        </ul>
+            ) : (
+                <ul>
                 <p className="title">Menu</p>
-                <Link to="/influencers" style={{textDecoration: "none"}}>
+                <div style={{textDecoration: "none"}} onClick={connectSDK}>
                     <li>
                         <PersonSearchOutlined className='icon'/>
-                        <span>Influencers</span>
+                        <span>Connect</span>
                     </li>
-                </Link>
-                <Link to="/campaigns" style={{textDecoration: "none"}}>
+                </div>
+{/*                 <Link to="/campaigns" style={{textDecoration: "none"}}>
                     <li>
                         <CampaignOutlined className='icon' />
                         <span>Campaigns</span>
                     </li>
-                </Link>
-                <Link to="/outreaches" style={{textDecoration: "none"}}>
-                    <li>
-                        <DraftsOutlined className='icon' />
-                        <span>Outreach</span>
-                    </li>
-                </Link>
-                <Link to="/analytics" style={{textDecoration: "none"}}>
+                </Link> */}
+{/*                 <Link to="/analytics" style={{textDecoration: "none"}}>
                     <li>
                         <AnalyticsOutlined className='icon' />
                         <span>Analytics</span>
                     </li>
-                </Link>
+                </Link> */}
                 <div style={{textDecoration: "none"}} onClick={logout1}>
                     <li>
                         <LogoutOutlined className='icon' />
@@ -62,6 +96,8 @@ const Sidebar = () => {
                     </li>
                 </div>
             </ul>
+            )}
+
         </div>
         </div>
     </div>

@@ -10,3 +10,12 @@ export const fetchInfluencers  = () => async(dispatch) => {
         console.log(error.message)
     }
 }
+
+export const connectSDKAction = (value) => async(dispatch) => {
+    try {
+        let response = await api.connectSDKAction()
+
+    } catch (error) {
+        
+    }
+}
