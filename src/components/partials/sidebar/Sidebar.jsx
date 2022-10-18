@@ -40,10 +40,16 @@ const Sidebar = () => {
                 <div className="avatar">
                     <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt='' className='avatarImg'/>
                 </div>
+                {user ? (
                 <div className='admin-profile'>
                     <div className="name">{user?.name}</div>
                     <div className="role">{user?.role}</div>
-                </div>
+                </div>) : (
+                    <div>
+                        <div className="name"></div>
+                        <div className="role"></div>
+                    </div>
+                )}
             </Link>
         </div>
         <div className="center">
