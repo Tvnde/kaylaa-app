@@ -19,6 +19,18 @@ const Sidebar = () => {
     let connectSDK = () => {
         console.log("connect")
     }
+
+    useEffect(() => {
+        const token = user?.token
+        if(token) {
+          const decodeToken = decode(token)
+          if(decodeToken.exp * 1000 < new Date().getTime()){
+            logout1()
+          } else {
+            setUser(JSON.parse(localStorage.getItem('profile')))
+          }
+        } else logout1()
+    }, [dispatch])
   return (
     <div className='sidebar'>
         <div className="sidebarContainer">
