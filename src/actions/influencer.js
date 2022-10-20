@@ -11,11 +11,11 @@ export const fetchInfluencers  = () => async(dispatch) => {
     }
 }
 
-export const connectSDKAction = (value) => async(dispatch) => {
+export const connectSDKAction = (id) => async(dispatch) => {
     try {
-        let response = await api.connectSDKAction()
-
+        let response = await api.connectSDKAction(id)
+        console.log(response)
     } catch (error) {
-        
+        console.log(error.body)
     }
 }
