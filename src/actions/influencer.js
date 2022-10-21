@@ -17,7 +17,7 @@ export const connectSDKAction = (id) => async(dispatch) => {
         console.log(id)
         let response = await api.connectSDKAction({id})
         console.log(response)
-        let config = {env: 'sandbox', userId: response.id, token: response.token, appName: "Kaylaa", redirectURL: window.location.href }
+        let config = {env: 'sandbox', userId: response.data.id, token: response.data.token, appName: "Kaylaa", redirectURL: window.location.href }
         const phyllo = PhylloConnectSDK.initialize(config)
         phyllo.open()
     } catch (error) {
