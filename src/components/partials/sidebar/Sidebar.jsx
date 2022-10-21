@@ -28,16 +28,16 @@ const Sidebar = () => {
           console.log(sdk)
           const appName = "Kaylaa";
         
-          /* const config = {
+          const config = {
             env,
-            userId,
-            token,
+            userId: sdk.data.sdk.id,
+            token: sdk.data.sdk.sdk_token,
             appName,
             workPlatformId,
             redirectURL : window.location.href
           }
           const phyllo = PhylloConnectSDK.initialize(config);
-          phyllo.open(); */
+          phyllo.open();
     
         } catch (err) {
           console.log(err);
