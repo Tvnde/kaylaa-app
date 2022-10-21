@@ -19,6 +19,7 @@ const Sidebar = () => {
     console.log(user)
 
     let connectSDK = () => {
+        console.log(user.id)
         dispatch(connectSDKAction(user.id))
     }
 
