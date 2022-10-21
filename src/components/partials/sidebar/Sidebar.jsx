@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import decode from 'jwt-decode'
+import { connectSDKAction } from '../../../actions/influencer'
+import { useExternalScript } from "../../../helpers/useExternalScript"
 
 import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, LogoutOutlined, PersonSearchOutlined } from "@mui/icons-material"
 
 import './sidebar.scss'
 import { useDispatch } from 'react-redux'
-import { connectSDKAction } from '../../../actions/influencer'
 
 const Sidebar = () => {
+    useExternalScript("https://cdn.getphyllo.com/connect/v1/connect-initialize.js")
     let navigate = useNavigate()
     let dispatch = useDispatch()
     const logout1 = () => {
@@ -17,7 +19,30 @@ const Sidebar = () => {
     }
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
     console.log(user)
-
+    const phylloSDKConnect=async(workPlatformId = null)=> {
+        try {
+          const env = "sandbox";
+          const timeStamp = new Date();
+          const isExistingUser = true;
+          const sdk = await dispatch(connectSDKAction(user.id))
+          console.log(sdk)
+          const appName = "Kaylaa";
+        
+          /* const config = {
+            env,
+            userId,
+            token,
+            appName,
+            workPlatformId,
+            redirectURL : window.location.href
+          }
+          const phyllo = PhylloConnectSDK.initialize(config);
+          phyllo.open(); */
+    
+        } catch (err) {
+          console.log(err);
+        }
+      }
     let connectSDK = () => {
         console.log(user.id)
         dispatch(connectSDKAction(user.id))
@@ -81,7 +106,7 @@ const Sidebar = () => {
             ) : (
                 <ul>
                 <p className="title">Menu</p>
-                <div style={{textDecoration: "none"}} onClick={connectSDK}>
+                <div style={{textDecoration: "none"}} onClick={phylloSDKConnect}>
                     <li>
                         <PersonSearchOutlined className='icon'/>
                         <span>Connect</span>

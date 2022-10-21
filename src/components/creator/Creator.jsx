@@ -9,7 +9,6 @@ import { Groups, ReplyAll, Visibility, WineBar } from '@mui/icons-material'
 
 
 const Creator = () => {
-
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
   const [platform, setPlatform] = useState("Instagram")
   let dispatch = useDispatch()
