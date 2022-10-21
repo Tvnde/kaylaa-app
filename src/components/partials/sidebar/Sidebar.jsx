@@ -6,6 +6,7 @@ import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, LogoutOutlined, Pe
 
 import './sidebar.scss'
 import { useDispatch } from 'react-redux'
+import { connectSDKAction } from '../../../actions/influencer'
 
 const Sidebar = () => {
     let navigate = useNavigate()
@@ -18,7 +19,7 @@ const Sidebar = () => {
     console.log(user)
 
     let connectSDK = () => {
-        console.log("connect")
+        dispatch(connectSDKAction(user.id))
     }
 
   return (
