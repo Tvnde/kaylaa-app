@@ -1,6 +1,8 @@
 import { INFLUENCER_FETCH, INFLUENCER_SAVE } from "../constants/types"
 import * as api from '../api'
 import "../phyllo/initialize-phyllo"
+import { Phyllo } from "react-phyllo-connect"
+import "../phyllo/initialize-phyllo"
 
 export const fetchInfluencers  = () => async(dispatch) => {
     try {
