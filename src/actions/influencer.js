@@ -1,6 +1,6 @@
 import { INFLUENCER_FETCH, INFLUENCER_SAVE } from "../constants/types"
 import * as api from '../api'
-import { PhylloConnectSDK } from "../phyllo/initialize-phyllo"
+import "../phyllo/initialize-phyllo"
 
 export const fetchInfluencers  = () => async(dispatch) => {
     try {
