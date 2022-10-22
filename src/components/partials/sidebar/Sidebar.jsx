@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import decode from 'jwt-decode'
 import { connectSDKAction } from '../../../actions/influencer'
 import { useExternalScript } from "../../../helpers/useExternalScript"
+import { PhylloConnectSDK } from "../../../phyllo/initialize-phyllo"
 
 import { AnalyticsOutlined, CampaignOutlined, DraftsOutlined, LogoutOutlined, PersonSearchOutlined } from "@mui/icons-material"
 

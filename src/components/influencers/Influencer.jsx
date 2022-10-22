@@ -61,7 +61,7 @@ const Influencer = () => {
                                     <img src="https://kaylaastore.s3.amazonaws.com/assets/avatars/avatar-3.png" alt="" />
                                 </div>
                                 <div className="influencer-basic">
-                                    <div className="influencer-name">Influencer Name/Handle</div>
+                                    <div className="influencer-name">{`${influencer.firstname} ${influencer.lastname}`}</div>
                                 </div>
                             </div>
                             <div className="influencer-socials">
